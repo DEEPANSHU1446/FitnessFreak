@@ -1,1 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+
+*>*{
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .type:before{
+    content:"";
+    position:absolute;
+    animation: animate 4s steps(6) infinite;
+}
+@keyframes animate{
+    40% ,60%{
+        left:100%
+    }
+    100%{
+        left:0%
+    }
+} */
