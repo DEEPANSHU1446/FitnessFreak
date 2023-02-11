@@ -1,8 +1,17 @@
 const mongoose = require ("mongoose")
 const userSchema = new mongoose.Schema({
-    userName:String,
-    email:String,
-    phone:Number,
+    userName:{
+        type:String,
+        require:true
+    },
+    email:{
+        type:String,
+        require:true
+    },
+    phone:{
+        type:Number,
+        require:true
+    },
     referalCode:String,
     code:Number,
     verified:{

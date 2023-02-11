@@ -49,10 +49,29 @@ function sendMail(email,code){
         }        
     }); 
 }
+const isValid = function(value) {
+    if (typeof value == "undefined" || value == null) return false;
+    if (typeof value == "string" && value.trim().length > 0) return true;
+    return false;
+};
 const addUser =async (req,res)=>{
     try{
     
-    let {email} = req.body;
+    let {email,userName,phone} = req.body;
+    //  if(!isValid(req.body)){
+
+    //  }
+    if(!isValid(email)){
+     return res.status(400).json("email is missing")
+    }
+    if(!isValid(userName)){
+     return res.status(400).json("userName is missing")
+        
+    }
+    if(!isValid(phone)){
+     return res.status(400).json("phone number is missing")
+        
+    }
     let checkEmail= await userModel.findOne( {email} )
     if(checkEmail){
         if(checkEmail.verified==true){
@@ -78,10 +97,13 @@ catch(error){
 //genetrating and verifying of otp with nodemailer?
  let login =async (req,res)=>{
     try {
-        let data =req.body.email
-        let findUser= await userModel.findOne({data})
+        let data =req.body
+        if(!data.email){
+            return res.status(400).json("email is missing")
+           }
+        let findUser= await userModel.findOne({email:data.email})
         if(!findUser){
-            return res.status(200).json("email is not registered")
+            return res.status(400).json("email is not registered")
         }
         let code = generateOTP()
         findUser.code=code

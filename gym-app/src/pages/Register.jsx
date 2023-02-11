@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"
-import {  toast } from 'react-toastify';
+// import {  toast } from 'react-toastify';
 
 export default function Register() {
 
@@ -25,13 +25,11 @@ export default function Register() {
       if (response.status === 200) {
         console.log(response.status)
         localStorage.setItem("email", response.data.email);
-        toast.success(response.data.message);
       navigate("/otp");}
     } catch (error) {
       setError(error.response.data);
     }
   }
-
 
   return (
     <div className="object-cover">
@@ -51,8 +49,8 @@ export default function Register() {
             <input  className="w-[28rem] h-[3rem]  bg-transparent bg-gradient-to-r from-black pl-[1rem] " type="text" name="referalCode" onChange={handleChange} placeholder="Referal code (optional)" />
           </div>
           <div className="">
-            <button className="bg-red-600 w-[28vw] h-[3rem] " onClick={handleSubmit}>
-              <Link to="/otp">send OTP</Link></button>
+           <Link to="/otp"> <button className="bg-red-600 w-[28vw] h-[3rem] " onClick={handleSubmit}>
+              send OTP</button></Link>
           </div>
         </div>
         {error && <p>{error}</p>}

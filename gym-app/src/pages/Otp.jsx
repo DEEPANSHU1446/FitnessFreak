@@ -17,7 +17,7 @@ otp:""
     e.preventDefault();
   try {
     await axios.post("http://localhost:8800/verify",otp)
-    navigate("/login")
+    navigate("/gym")
   } catch (error) {
   toast.error(error.response.message);
   setError(error.response.data);
@@ -41,7 +41,9 @@ otp:""
             <h1>OTP</h1>
             <input type="text" name="otp" id="" onChange={handleChange} placeholder='Enter Your OTP' />
           </div>
-          <button className='btn' onClick={LoginUser}><Link to="/login">Submit</Link></button>
+         {/* <Link to="/gym">  */}
+         <button className='btn' onClick={LoginUser}>Submit</button>
+         {/* </Link> */}
         </form>
       </div>
       {error && <p>{error}</p>}
