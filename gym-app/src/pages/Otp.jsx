@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import axios from "axios"
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 
 export const Otp = () => {
   let email=localStorage.email
@@ -19,7 +19,7 @@ otp:""
     await axios.post("http://localhost:8800/verify",otp)
     navigate("/gym")
   } catch (error) {
-  toast.error(error.response.message);
+  // toast.error(error.response.message);
   setError(error.response.data);
   }
   }
@@ -48,7 +48,7 @@ otp:""
       </div>
       {error && <p>{error}</p>}
 
-      <ToastContainer />
+      {/* <ToastContainer /> */}
 
     </section>
   </>

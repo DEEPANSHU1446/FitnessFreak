@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import img from "../images/ic.gif";
+// import img from "../images/ic.gif";
 
 export default function Gym() {
   const [city, setcity] = useState({});
