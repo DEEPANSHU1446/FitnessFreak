@@ -3,7 +3,7 @@ import gimg from "../images/google.png"
 import aimg from "../images/app.jpeg"
 export default function Footer() {
   return (
-    <div className=' text-white my-20 flex justify-between items-center'>
+    <div className=' text-white my-20 flex justify-between items-center '>
       <div className='ml-48  text-3xl'>
       <i className="fa-brands fa-instagram mr-10 cursor-pointer hover:text-red-500"></i>
       <i className="fa-brands fa-facebook mr-10 cursor-pointer hover:text-blue-800"></i>
